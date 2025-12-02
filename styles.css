@@ -1,0 +1,519 @@
+:root {
+  --color-primary-50: #fef1f9;
+  --color-primary-100: #fee5f4;
+  --color-primary-200: #feccea;
+  --color-primary-300: #ffa2d9;
+  --color-primary-400: #fe68bc;
+  --color-primary-500: #f93ba0;
+  --color-primary-600: #e31679;
+  --color-primary-700: #cb0b62;
+  --color-primary-800: #a70d51;
+  --color-primary-900: #8b1046;
+  --color-primary-950: #560126;
+  --color-secondary-50: #f1f8fe;
+  --color-secondary-100: #e2f0fc;
+  --color-secondary-200: #bee1f9;
+  --color-secondary-300: #84c9f5;
+  --color-secondary-400: #42acee;
+  --color-secondary-500: #198fd9;
+  --color-secondary-600: #0c74bd;
+  --color-secondary-700: #0b5c99;
+  --color-secondary-800: #0e4f7e;
+  --color-secondary-900: #114269;
+  --color-secondary-950: #0b2a46;
+}
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  scroll-behavior: smooth; 
+  margin: 0;
+}
+
+.hero { 
+  background: linear-gradient(rgba(227, 22, 121, 0.8), rgba(227, 22, 121, 0.6)), url('') center/cover no-repeat; 
+  min-height: 30rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  color: white; 
+  background-color: var(--color-primary-600);
+  padding: 2rem 1rem;
+}
+
+.hero .cta-btn {
+  background-color: var(--color-secondary-500);
+}
+
+.hero .cta-btn:hover {
+  background-color: var(--color-secondary-600);
+}
+
+.card, .step, .faq-item, .product-item { 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease;
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.card:hover, .step:hover, .faq-item:hover, .product-item:hover { 
+  transform: translateY(-5px); 
+  -webkit-transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+}
+
+.card {
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.card .read-more-btn {
+  margin-top: auto;
+}
+
+.faq-item { 
+  cursor: pointer; 
+  margin: 0.75rem;
+}
+
+.faq-item.active {
+  border: 2px solid var(--color-secondary-500);
+}
+
+.faq-answer { 
+  max-height: 0; 
+  overflow: hidden; 
+  transition: max-height 0.4s ease, padding 0.4s ease; 
+  flex-grow: 1; 
+  line-height: 1.5;
+}
+
+.faq-item.active .faq-answer { 
+  max-height: 200px; 
+  padding-top: 1rem; 
+  padding-bottom: 1rem; 
+}
+
+.animate-fade-in { 
+  animation: fadeIn 1s ease-out; 
+  -webkit-animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(15px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; -webkit-transform: translateY(15px); } 
+  to { opacity: 1; -webkit-transform: translateY(0); } 
+}
+
+.cta-btn, .read-more-btn, .product-item-btn {
+  background-color: var(--color-primary-600);
+  color: white;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.cta-btn:hover, .read-more-btn:hover, .product-item-btn:hover {
+  background-color: var(--color-secondary-500);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+}
+
+.sr-only { 
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip: rect(0, 0, 0, 0); 
+  border: 0; 
+}
+
+:focus { 
+  outline: 2px solid var(--color-secondary-500); 
+  outline-offset: 2px; 
+}
+
+.section-divider { 
+  width: 80px; 
+  height: 4px; 
+  background: var(--color-primary-600); 
+  border-radius: 2px; 
+  margin: 1.5rem auto; 
+}
+
+.step-number { 
+  background: var(--color-primary-600); 
+}
+
+.modal { 
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.5); 
+  z-index: 50; 
+}
+
+.modal-content { 
+  background: white; 
+  max-width: 90%; 
+  width: 500px; 
+  margin: 10% auto; 
+  padding: 1.5rem; 
+  border-radius: 1rem; 
+  position: relative; 
+}
+
+.modal-close { 
+  position: absolute; 
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 3.125rem;
+  cursor: pointer; 
+  color: var(--color-secondary-500); 
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.modal.active { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+footer {
+  background-color: var(--color-secondary-500);
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.product-carousel {
+  margin: 6px 0;
+}
+
+.product-carousel .product-item {
+  margin: 0 0.5rem;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.faq-container .faq-item {
+  margin: 0.75rem;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: var(--color-primary-600);
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  background: var(--color-secondary-500);
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: white;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev:before {
+  content: '←';
+}
+
+.slick-next:before {
+  content: '→';
+}
+
+.slick-list {
+  margin: 0 2rem;
+}
+
+.back-to-top {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--color-primary-600);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.back-to-top:hover {
+  background: var(--color-secondary-500);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+@supports not (gap: 1rem) {
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .faq-container .faq-item {
+    margin-bottom: 1rem;
+  }
+  .grid.gap-4 > * {
+    margin: 0.5rem;
+  }
+  .grid.sm\:gap-6 > * {
+    margin: 0.75rem;
+  }
+  .grid.md\:gap-8 > * {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-container .faq-item {
+    margin: 0;
+    width: 100%;
+  }
+  .faq-answer {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .nav-container {
+    justify-content: center;
+  }
+  .hero {
+    min-height: 25rem;
+    padding: 1.5rem 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .nav-container {
+    padding: 0.75rem;
+  }
+  .logo img {
+    height: 52.5px;
+  }
+  .section-divider {
+    width: 60px;
+  }
+  .modal-content {
+    width: 90%;
+    padding: 1rem;
+  }
+  .product-carousel .product-item {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 20rem;
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .section-divider {
+    width: 50px;
+  }
+  .card img, .product-item img {
+    height: 120px;
+  }
+  .slick-list {
+    margin: 0 1.5rem;
+  }
+  .slick-prev, .slick-next {
+    width: 35px;
+    height: 35px;
+  }
+  .slick-prev:before, .slick-next:before {
+    font-size: 22.5px;
+  }
+  .modal-close {
+    font-size: 3.125rem;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 15rem;
+    padding: 0.75rem;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.85rem;
+  }
+  .cta-btn, .read-more-btn, .product-item-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .section-divider {
+    width: 40px;
+  }
+  .card img, .product-item img {
+    height: 100px;
+  }
+  .product-carousel .product-item {
+    min-width: 160px;
+  }
+  .slick-list {
+    margin: 0 1rem;
+  }
+  .slick-prev, .slick-next {
+    width: 35px;
+    height: 35px;
+  }
+  .slick-prev:before, .slick-next:before {
+    font-size: 22.5px;
+  }
+  .back-to-top {
+    width: 32px;
+    height: 32px;
+  }
+  .modal-close {
+    font-size: 3.125rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem;
+  }
+}
+
+
+/* This Keeps bold only on specific <strong> inside modals if needed */
+body .modal-content strong {
+  font-weight: 600 !important;
+}
+
+/* On Desktop: Show "Call Us Now" */
+.call-text::before {
+  content: "Call Us Now";
+}
+
+/* On Mobile ≤ 768px: Change to phone number */
+@media (max-width: 768px) {
+  .call-text::before {
+    content: "010 020 6317";
+  }
+  
+  /* Slightly larger text on mobile for better tap target */
+  .call-to-action-mobile {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.5rem !important;
+  }
+}
+
+/* FAQ – Consistent spacing */
+.faq-item {
+  padding: 1rem 1.25rem; /* mobile */
+}
+@media (min-width: 640px) {
+  .faq-item { padding: 1.25rem 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .faq-item { padding: 1.5rem 2rem; }
+}
+
+/* FAQ – No bold in paragraphs */
+.faq-answer p,
+.faq-answer {
+  font-weight: normal !important;
+}
+.faq-answer strong {
+  font-weight: 600;
+}
+
+
+#whatsapp-cta-popup{
+background-color: rgb(22, 163, 74) !important;
+;
+}
