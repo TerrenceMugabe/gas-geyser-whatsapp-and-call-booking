@@ -28,6 +28,8 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link href="https://cal.gascompany.co.za/embed/installation-site-visits.css" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 
 
@@ -563,7 +565,7 @@
   </section>
 
   <!-- CTA POPUP MODAL -->
-  <div id="cta-popup" class="modal">
+  <!--<div id="cta-popup" class="modal">
     <div class="modal-content max-w-md mx-auto p-6 sm:p-8 text-center animate-fade-in">
       <span class="modal-close text-4xl">×</span>
       <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">How Would You Like to Get Started?</h3>
@@ -578,7 +580,44 @@
         </button>
       </div>
     </div>
+  </div>-->
+
+  <!-- CTA POPUP MODAL -->
+<div id="cta-popup" class="modal">
+  <div class="modal-content max-w-md mx-auto p-6 sm:p-8 text-center animate-fade-in">
+    <span class="modal-close text-4xl">×</span>
+    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">How Would You Like to Get Started?</h3>
+    <p class="text-gray-600 mb-6">Book your free site visit now via WhatsApp, email, or speak to our friendly team.</p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+      <!-- Call Button -->
+      <a href="tel:+27100206317" class="cta-btn bg-green-600 text-white flex items-center justify-center gap-2 call-us-btn">
+        <i class="fa-solid fa-phone"></i>
+        <span class="call-text"></span>
+      </a>
+
+      <!-- WhatsApp Button -->
+      <button id="whatsapp-cta-popup" class="cta-btn bg-[#25d366] text-white flex items-center justify-center gap-2 whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </button>
+      
+
+      <!-- Email Button (New) -->
+<button 
+  id="email-cta-popup"
+  class="cta-btn bg-gray-800 text-white flex items-center justify-center gap-2 email-btn"
+  data-cal-link="installations/installation-site-visits"
+  data-cal-namespace="installation-site-visits"
+  data-cal-config='{"layout":"month_view"}'
+>
+  <i class="fa-solid fa-envelope"></i> Email Us
+</button>
+
+    </div>
   </div>
+</div>
+
 
   <!-- CTA -->
   <section class="py-12 sm:py-16 md:py-20 bg-white text-center animate-fade-in">
@@ -603,5 +642,13 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="scripts.js"></script>
+
+  <script>
+  document.getElementById("email-cta-popup").addEventListener("click", function () {
+    Cal("installation-site-visits", "booking", {
+      popup: true
+    });
+  });
+</script>
 </body>
 </html>
