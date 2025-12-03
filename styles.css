@@ -474,9 +474,9 @@ body .modal-content strong {
   font-weight: 600 !important;
 }
 
-/* On Desktop: Show "Call Us Now" */
+/* On Desktop: Show "Call Us" */
 .call-text::before {
-  content: "Call Us Now";
+  content: "Call Us";
 }
 
 /* On Mobile ≤ 768px: Change to phone number */
@@ -517,4 +517,5 @@ body .modal-content strong {
 background-color: rgb(22, 163, 74) !important;
 ;
 }
+
 
