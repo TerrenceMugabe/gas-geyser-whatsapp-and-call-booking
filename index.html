@@ -2,15 +2,35 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1007722209"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-1007722209');
 
-  gtag('config', 'AW-1007722209');
-</script>
+    // These functions define the "actions" for your buttons
+    function gtag_report_conversion_phone(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-1007722209/pBBxCMO07fYbEOG9wuAD',
+          'event_callback': callback
+      });
+      return false;
+    }
+
+    function gtag_report_conversion_whatsapp() {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-1007722209/R3hKCNz34PYbEOG9wuAD',
+          'value': 1.0,
+          'currency': 'ZAR'
+      });
+    }
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -654,5 +674,6 @@
 </script> -->
 </body>
 </html>
+
 
 
