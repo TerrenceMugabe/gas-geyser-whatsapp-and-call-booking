@@ -614,15 +614,20 @@
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
 
       <!-- Call Button -->
-      <a href="tel:+27100206317" class="cta-btn bg-green-600 text-white flex items-center justify-center gap-2 call-us-btn">
-        <i class="fa-solid fa-phone"></i>
-        <span class="call-text"></span>
-      </a>
+
+      <a href="tel:+27100206317" 
+     onclick="return gtag_report_conversion_phone('tel:+27100206317');" 
+     class="cta-btn bg-green-600 text-white flex items-center justify-center gap-2 call-us-btn">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Us</span>
+  </a>
 
       <!-- WhatsApp Button -->
-      <button id="whatsapp-cta-popup" class="cta-btn bg-[#25d366] text-white flex items-center justify-center gap-2 whatsapp-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-      </button>
+      <button id="whatsapp-cta-popup" 
+          onclick="gtag_report_conversion_whatsapp();" 
+          class="cta-btn bg-[#25d366] text-white flex items-center justify-center gap-2 whatsapp-btn">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+  </button>
       
 
       <!-- Calcom Button / Instant Booking Button (New) -->
@@ -674,6 +679,7 @@
 </script> -->
 </body>
 </html>
+
 
 
 
